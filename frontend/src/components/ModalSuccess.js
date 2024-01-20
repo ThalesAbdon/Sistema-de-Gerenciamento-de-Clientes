@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 const ModalSuccess = ({ isOpen, onClose, onOkClick }) => {
   return (
     <Modal
+      ariaHideApp={false}
       isOpen={isOpen}
       onRequestClose={onClose}
       contentLabel="Cliente Cadastrado com Sucesso"

@@ -2,10 +2,11 @@ const pg = require('../database/connection')
 const create_table = async() => {
     try{
         await pg.query(`
-        CREATE TABLE clients (
+        CREATE TABLE if not exists clients (
+            id SERIAL PRIMARY KEY,
             name VARCHAR(90),
-            email VARCHAR(90),
-            phone VARCHAR(90)
+            email VARCHAR(90) UNIQUE,
+            phone VARCHAR(13) UNIQUE
         );
         `)
         await pg.end()

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ModalSuccess from './components/ModalSuccess'; // Importe o componente ModalSuccess
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     telefone: '',
   });
 
+  const [modalIsOpen, setModalIsOpen] = useState(false); 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -33,23 +35,33 @@ function App() {
     }
     return true;
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Verificar se o telefone está vazio
     if (formData.telefone.trim() === '') {
       toast.error('Por favor, preencha o campo Telefone.');
       return;
     }
 
-    // Validar o telefone antes de enviar
     if (validateTelefone(formData.telefone)) {
       console.log('Dados do formulário:', formData);
       // Adicione aqui a lógica para enviar os dados para o backend ou realizar outras ações
+      // Abre o modal de sucesso
+      setModalIsOpen(true);
     } else {
       console.log('Formulário inválido. Corrija os erros.');
     }
+  };
+
+  const closeModal = () => {
+    // Fecha o modal e limpa os campos de entrada
+    setModalIsOpen(false);
+    setFormData({
+      nome: '',
+      email: '',
+      telefone: '',
+    });
   };
 
   return (
@@ -98,6 +110,10 @@ function App() {
           <button type="submit">Enviar</button>
         </div>
       </form>
+
+      {/* Modal de Sucesso */}
+      <ModalSuccess isOpen={modalIsOpen} ariaHideApp={false} onClose={closeModal} onOkClick={closeModal} />
+
       <ToastContainer />
     </div>
   );
