@@ -79,6 +79,7 @@ Dependências:
 * @testing-library/react: ^13.4.0
 * @testing-library/user-event: ^13.5.0
 * axios: ^1.6.5
+* dotenv: ^16.3.2
 * react-dom: ^18.2.0
 * react-hook-form: ^7.49.3
 * react-input-mask: ^2.0.4
