@@ -69,9 +69,8 @@ export default function Registrar() {
     if (validateTelefone(formData.phone)) {
       const phoneFormat = formData.phone.replace(/\D/g, '');
       formData.phone = phoneFormat;
-
       try {
-        const response = await axios.post(`${process.env.REACT_APP_API_URL_REGISTER}`, formData);
+        await axios.post(`${process.env.REACT_APP_API_URL_REGISTER}`, formData);
         setModalIsOpen(true);
       } catch (error) {
         toast.error('Usuário já cadastrado!');

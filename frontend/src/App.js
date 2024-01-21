@@ -5,7 +5,6 @@ import Listar from './pages/List'
 import Entregas from './pages/Delivery'
 
 function App() {
-  console.log(`${process.env.REACT_APP_API_URL_REGISTER}`)
   return (
     
     <div className="App">
