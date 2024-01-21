@@ -40,7 +40,7 @@ const ModalDelivery = ({ isOpen, onClose, clientes }) => {
         <tbody>
           {currentItems.map((cliente, index) => (
             <tr key={index + indexOfFirstItem}>
-              <td>{index + indexOfFirstItem + 1}</td>
+              <td>{index + indexOfFirstItem + 1 + "°"}</td>
               <td>{cliente.name}</td>
               <td>{cliente.email}</td>
               <td>{formatPhoneNumber(cliente.phone)}</td>
