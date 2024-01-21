@@ -19,12 +19,18 @@ export default function Registrar() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === 'name' && value !== '' && !/^[a-zA-Z]+$/.test(value)) {
-      toast.error('O campo name deve conter apenas letras.');
+    if (name === 'name') {
+    if (!/[a-zA-Z]/.test(value) || !/^[a-zA-Z\s]+$/.test(value)) {
+      toast.error('O campo name deve conter pelo menos uma letra, apenas letras e espaços.');
       return;
     }
+  }
 
     if (name === 'x' || name === 'y') {
+      if (!/\d/.test(value) || !/^\d*\.?\d*$/.test(value)) {
+        toast.error('As coordenadas devem conter pelo menos um número, apenas números e ponto.');
+        return;
+      }
       const sanitizedValue = value.replace(',', '.');
       setFormData((prevData) => ({
         ...prevData,
