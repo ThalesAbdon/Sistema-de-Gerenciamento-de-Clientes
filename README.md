@@ -44,9 +44,10 @@ a aplicação deve aprimorar as rotas de atendimento, buscando calcular a trajet
 * 1° - Clonar o repositório, ele tem 2 pasta: backend e frontend
 * 2° - Instalar as dependencias de back e front(utilizei npm)
         Acesse as pastas(backend e frontend) e execute:
-        ```npm i``` ou ```yarn add```
-* 3° - Trocar as variavéis de ambiente(do backend) no arquivo: ```.env```
+        ```npm i```
+* 3° - Trocar as variavéis de ambiente no arquivo: ```.env```
         Acesse a pasta do backend e altere as variavéis
+        Acesse a pasta do frontend e altere as variavéis
 * 4° - Executar script do packjson para rodar a migration
         Acesse a pasta do backend e execute: ```npm run migration:run```
 * 5° - Execute os 2 projetos
