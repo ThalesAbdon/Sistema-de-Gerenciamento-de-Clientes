@@ -69,17 +69,14 @@ export default function Registrar() {
     if (validateTelefone(formData.phone)) {
       const phoneFormat = formData.phone.replace(/\D/g, '');
       formData.phone = phoneFormat;
-      console.log('Dados do formulário:', formData);
 
       try {
-        const response = await axios.post('http://localhost:3006/register', formData);
-        console.log('Resposta do servidor:', response.data);
+        const response = await axios.post(`${process.env.REACT_APP_API_URL_REGISTER}`, formData);
         setModalIsOpen(true);
       } catch (error) {
+        toast.error('Usuário já cadastrado!');
         console.error('Erro ao enviar dados para o backend:', error);
       }
-    } else {
-      console.log('Formulário inválido. Corrija os erros.');
     }
   };
 

@@ -9,7 +9,7 @@ const Entregas = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3006/location');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL_LOCATION}`);
         setClientes(response.data);
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const itemsPerPage = 5;
-const url = "http://localhost:3006/get";
 
 const formatPhoneNumber = (phoneNumber) => {
   const cleaned = phoneNumber.replace(/\D/g, '');
@@ -20,7 +19,7 @@ const ListagemPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL_GET}`);
         setData(response.data);
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);

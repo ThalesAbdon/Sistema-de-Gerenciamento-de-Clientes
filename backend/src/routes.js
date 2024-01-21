@@ -11,6 +11,9 @@ route.use(cors());
 route.post('/register', register);
 route.get('/get', get);
 route.get('/location',location);
+route.get('/', (req, res) => {
+  res.send('Sistema De Gerenciamento de Clientes API!');
+});
 
 
 module.exports = route;
