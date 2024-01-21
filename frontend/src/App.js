@@ -15,7 +15,6 @@ function App() {
           <Link to="/entregas">Entregas</Link>
         </nav>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/registrar/" element={<Registrar />} />
           <Route path="/listar/" element={<Listar />} />
           <Route path="/entregas/" element={<Entregas />} />

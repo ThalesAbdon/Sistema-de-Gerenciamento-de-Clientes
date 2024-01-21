@@ -25,7 +25,6 @@ export default function Registrar() {
     }
 
     if (name === 'x' || name === 'y') {
-      // Substituir vírgula por ponto nas coordenadas
       const sanitizedValue = value.replace(',', '.');
       setFormData((prevData) => ({
         ...prevData,
@@ -159,8 +158,6 @@ export default function Registrar() {
           <button type="submit">Enviar</button>
         </div>
       </form>
-
-      {/* Modal de Sucesso */}
       <ModalSuccess isOpen={modalIsOpen} ariaHideApp={false} onClose={closeModal} onOkClick={closeModal} />
 
       <ToastContainer />
