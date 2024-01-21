@@ -12,7 +12,7 @@ Este projeto visa atender às necessidades de uma empresa especializada em limpe
 2. [Começando](#começando)
 3. [Ferramentas](#ferramentas)
     - 3.1 [Backend](#backend)
-    - 3.2 [Fronted](#frontend)
+    - 3.2 [Frontend](#frontend)
 
 
 ---
